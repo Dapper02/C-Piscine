@@ -1,5 +1,0 @@
-Credentials cache: API:A11BBF98-1ACC-4D5C-B9EA-41BD7C6B8C31
-        Principal: fcarvalh@42LISBOA.COM
-
-  Issued                Expires             Flags    Principal
-Oct 19 17:31:58 2020  Oct 20 03:31:38 2020  FPIA   krbtgt/42LISBOA.COM@42LISBOA.COM
