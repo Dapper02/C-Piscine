@@ -11,20 +11,10 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
-void	ft_print_int(int a)
+void	ft_print(char c)
 {
-	char *alphabet;
-
-	alphabet = "0123456789";
-	write(1, alphabet + a, 1);
-}
-
-void	ft_print_nums(int a, int b)
-{
-	ft_print_int(a);
-	ft_print_int(b);
+	write(1, &c, 1);
 }
 
 void	ft_print_comb2(void)
@@ -33,16 +23,20 @@ void	ft_print_comb2(void)
 	int b;
 
 	a = 0;
-	b = 0;
-	while (a <= 9)
+	while (a <= 98)
 	{
-		while (b <= 9)
+		b = a + 1;
+		while (b <= 99)
 		{
-			ft_print_nums(a, b);
-			write(1, ", ", 2);
+			ft_print(a / 10 + '0');
+			ft_print(a % 10 + '0');
+			write(1, " ", 1);
+			ft_print(b / 10 + '0');
+			ft_print(b % 10 + '0');
+			if (!(a == 98))
+				write(1, ", ", 2);
 			b++;
 		}
-		b = 0;
 		a++;
 	}
 }
