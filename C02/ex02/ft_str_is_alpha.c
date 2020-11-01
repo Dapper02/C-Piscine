@@ -15,27 +15,18 @@
 
 int		ft_str_is_alpha(char *str)
 {
-	int count = 0;
+	int c;
 
-	while(str[count] != '\0')
+	c = 0;
+	if (str[c] == '\0')
+		return (1);
+	while (str[c] != '\0')
 	{
-		if((str[count] <= 'A' || str[count] >= 'Z') && (str[count] <= 'a' || str[count] >='z'))
-		{
-			return (1);
-			count++;
-		}
+		if ((str[c] >= 'a' && str[c] <= 'z') ||
+				(str[c] >= 'A' && str[c] <= 'Z') ||
+				str[c] == '\0')
+			return (0);
+		c++;
 	}
-	return (0);
-}
-
-
-int main()
-{
- char str[] = "s131hrt";
-// char to_find[] = "asdf";
-// unsigned int n = 3;
-
- printf("%d", ft_str_is_alpha(str));
-
- return(0);
+	return (1);
 }

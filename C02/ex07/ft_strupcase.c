@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcarvalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/31 18:20:51 by fcarvalh          #+#    #+#             */
-/*   Updated: 2020/11/01 19:32:53 by fcarvalh         ###   ########.fr       */
+/*   Created: 2020/11/01 19:36:18 by fcarvalh          #+#    #+#             */
+/*   Updated: 2020/11/01 19:37:02 by fcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 
-int		ft_str_is_numeric(char *str)
+char	*ft_strupcase(char *str)
 {
 	int c;
 
 	c = 0;
-	if (str[c] == '\0')
-		return (1);
 	while (str[c] != '\0')
 	{
-		if (str[c] >= '0' && str[c] <= '9')
-			return (1);
+		if (str[c] >= 'a' && str[c] <= 'z')
+			str[c] -= 32;
 		c++;
 	}
-	return (0);
+	return (str);
 }
