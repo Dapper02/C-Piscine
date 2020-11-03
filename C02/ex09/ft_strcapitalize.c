@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcarvalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/31 18:16:50 by fcarvalh          #+#    #+#             */
-/*   Updated: 2020/11/03 21:52:05 by fcarvalh         ###   ########.fr       */
+/*   Created: 2020/11/03 22:17:37 by fcarvalh          #+#    #+#             */
+/*   Updated: 2020/11/03 22:23:08 by fcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <unistd.h>
 
-int		ft_str_is_alpha(char *str)
+char	*ft_strcapitalize(char *str)
 {
-	int c;
+	int i;
 
-	c = 0;
-	if (str[c] == '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
-		return (1);
-	}
-	while (str[c] != '\0')
-	{
-		if ((str[c] >= 'a' && str[c] <= 'z') || (str[c] >= 'A' && str[c] <= 'Z'))
+		if ((i == 0 || str[i - 1] == ' ') && (str[i] >= 'a' && str[i] <= 'z'))
 		{
-			return (1);
-			c++;
+			str[i] -= 32;
 		}
+		i++;
 	}
-		return (0);
+	return (str);
 }

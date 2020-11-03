@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcarvalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/31 18:16:50 by fcarvalh          #+#    #+#             */
-/*   Updated: 2020/11/03 21:52:05 by fcarvalh         ###   ########.fr       */
+/*   Created: 2020/11/03 22:26:01 by fcarvalh          #+#    #+#             */
+/*   Updated: 2020/11/03 22:29:45 by fcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <unistd.h>
 
-int		ft_str_is_alpha(char *str)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int c;
+	unsigned int i;
+	unsigned int j;
 
-	c = 0;
-	if (str[c] == '\0')
+	i = 0;
+	j = 0;
+	while (src[j] && i < size - 1)
 	{
-		return (1);
+		dest[i++] = src[j++];
 	}
-	while (str[c] != '\0')
-	{
-		if ((str[c] >= 'a' && str[c] <= 'z') || (str[c] >= 'A' && str[c] <= 'Z'))
-		{
-			return (1);
-			c++;
-		}
-	}
-		return (0);
+	dest[i] = '\0';
+	return (0);
 }

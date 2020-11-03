@@ -6,7 +6,7 @@
 /*   By: fcarvalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 19:36:18 by fcarvalh          #+#    #+#             */
-/*   Updated: 2020/11/01 19:37:02 by fcarvalh         ###   ########.fr       */
+/*   Updated: 2020/11/03 22:10:46 by fcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ char	*ft_strupcase(char *str)
 	while (str[c] != '\0')
 	{
 		if (str[c] >= 'a' && str[c] <= 'z')
+		{
 			str[c] -= 32;
+		}
 		c++;
 	}
 	return (str);

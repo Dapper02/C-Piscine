@@ -6,7 +6,7 @@
 /*   By: fcarvalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 10:34:15 by fcarvalh          #+#    #+#             */
-/*   Updated: 2020/10/31 18:16:05 by fcarvalh         ###   ########.fr       */
+/*   Updated: 2020/11/03 21:37:58 by fcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ char	*ft_strcpy(char *dest, char *src)
 		dest[count] = src[count];
 		count++;
 	}
-	dest[count] = '\0';
+	dest[count] = src[count];
 	return (dest);
 }

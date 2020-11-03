@@ -6,7 +6,7 @@
 /*   By: fcarvalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 19:33:26 by fcarvalh          #+#    #+#             */
-/*   Updated: 2020/11/01 19:35:09 by fcarvalh         ###   ########.fr       */
+/*   Updated: 2020/11/03 22:00:49 by fcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,15 @@ int		ft_str_is_uppercase(char *str)
 
 	c = 0;
 	if (str[c] == '\0')
+	{
 		return (1);
+	}
 	while (str[c] != '\0')
 	{
 		if (str[c] >= 'A' && str[c] <= 'Z')
+		{
 			return (1);
+		}
 		c++;
 	}
 	return (0);

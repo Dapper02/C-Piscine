@@ -6,7 +6,7 @@
 /*   By: fcarvalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 19:37:54 by fcarvalh          #+#    #+#             */
-/*   Updated: 2020/11/01 19:38:33 by fcarvalh         ###   ########.fr       */
+/*   Updated: 2020/11/03 22:06:34 by fcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,16 @@ int		ft_str_is_printable(char *str)
 
 	c = 0;
 	if (str[c] == '\0')
+	{
 		return (1);
+	}
 	while (str[c] != '\0')
 	{
-		if (str[c] >= 32 && str[c] <= 127)
-			return (0);
+		if (str[c] > 32 && str[c] < 127)
+		{
+			return (1);
+		}
 		c++;
 	}
-	return (1);
+	return (0);
 }
