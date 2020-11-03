@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main(void)
+{
+	const char src1[10]	= "ab121";
+	char dest1[10]   = "12123123";
+
+	char src[10]	= "ab121";
+	char dest[10]	= "12123123";
+
+	size_t 			nb = 8;
+	unsigned int 	nb2 = 8;
+	//strcat(src, dest);
+	printf("Str: %u", ft_strlcpy(dest, src, nb2));
+	return (0);
+}
