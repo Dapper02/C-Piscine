@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcarvalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/03 23:50:50 by fcarvalh          #+#    #+#             */
-/*   Updated: 2020/11/04 22:03:48 by fcarvalh         ###   ########.fr       */
+/*   Created: 2020/11/04 22:16:04 by fcarvalh          #+#    #+#             */
+/*   Updated: 2020/11/04 22:28:22 by fcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <unistd.h>
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+void	ft_putchar(char c)
 {
-	int i = 0;
-	int j = 0;
-	
-	while(dest[i] != '\0' && i < size)
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char *str)
+{
+	int i = -1;
+
+	while(str[i++] != '\0')
 	{
-		i++;
+		ft_putchar(str[i]);
 	}
-	
-	while(src[j] != '\0' && (i + j + 1) < size)
-	{
-		dest[i] = src[j];
-		i++;
-    	j++;
-	}
-	if(i < size)
-	{
-		dest[i] = '\0';
-	}
-	return (dest);
 }

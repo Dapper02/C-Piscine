@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcarvalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/03 23:50:50 by fcarvalh          #+#    #+#             */
-/*   Updated: 2020/11/04 22:03:48 by fcarvalh         ###   ########.fr       */
+/*   Created: 2020/11/04 22:31:50 by fcarvalh          #+#    #+#             */
+/*   Updated: 2020/11/04 22:41:49 by fcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+void    ft_putchar(char c)
 {
-	int i = 0;
-	int j = 0;
-	
-	while(dest[i] != '\0' && i < size)
-	{
-		i++;
-	}
-	
-	while(src[j] != '\0' && (i + j + 1) < size)
-	{
-		dest[i] = src[j];
-		i++;
-    	j++;
-	}
-	if(i < size)
-	{
-		dest[i] = '\0';
-	}
-	return (dest);
+  write(1, &c, 1);
+}
+
+void ft_putnbr(int nb)
+{
+	long i = nb;
+
+	if (i < 0)
+    {
+   		 ft_putchar('-');
+   		 i = i * (-1);
+    }
+    if (i > 9)
+    {
+        ft_putnbr(i / 10);
+		ft_putnbr(i % 10);
+    }
+    else
+    {
+   		 ft_putchar(i + '0');
+    }
 }
