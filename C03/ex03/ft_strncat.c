@@ -6,21 +6,23 @@
 /*   By: fcarvalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 23:40:16 by fcarvalh          #+#    #+#             */
-/*   Updated: 2020/11/03 23:43:38 by fcarvalh         ###   ########.fr       */
+/*   Updated: 2020/11/04 21:45:41 by fcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-char *ft_strncat(char *dest, char *src, unsigned int nb)
+char	*ft_strcat(char *dest, char *src)
 {
 	int i = 0;
 	int j = 0;
 	
 	while(dest[i] != '\0')
+	{
 		i++;
+	}
 	
-	while(j < nb)
+	while(src[j] != '\0' && j < nb)
 	{
 		dest[i] = src[j];
 		i++;
