@@ -1,42 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcarvalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/28 19:41:37 by fcarvalh          #+#    #+#             */
-/*   Updated: 2020/11/05 21:23:31 by fcarvalh         ###   ########.fr       */
+/*   Created: 2020/11/05 22:24:35 by fcarvalh          #+#    #+#             */
+/*   Updated: 2020/11/05 22:31:43 by fcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print(char c)
+int	ft_is_prime(int nb)
 {
-	write(1, &c, 1);
-}
+	int	i;
 
-void	ft_print_comb2(void)
-{
-	int a;
-	int b;
+	i = 2;
+	if (nb <= 1)
+		return (0);
 
-	a = 0;
-	while (a <= 98)
+	while (i <= nb / i)
 	{
-		b = a + 1;
-		while (b <= 99)
-		{
-			ft_print(a / 10 + '0');
-			ft_print(a % 10 + '0');
-			write(1, " ", 1);
-			ft_print(b / 10 + '0');
-			ft_print(b % 10 + '0');
-			if (!(a == 98))
-				write(1, ", ", 2);
-			b++;
-		}
-		a++;
+		if (nb % i == 0)
+			return (0);
+		i++;
 	}
+	return (1);
 }

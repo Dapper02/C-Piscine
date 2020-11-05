@@ -1,42 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcarvalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/28 19:41:37 by fcarvalh          #+#    #+#             */
-/*   Updated: 2020/11/05 21:23:31 by fcarvalh         ###   ########.fr       */
+/*   Created: 2020/11/05 21:41:57 by fcarvalh          #+#    #+#             */
+/*   Updated: 2020/11/05 22:33:04 by fcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <unistd.h>
 
-void	ft_print(char c)
+int		ft_recursive_factorial(int nb)
 {
-	write(1, &c, 1);
-}
+	int		value;
 
-void	ft_print_comb2(void)
-{
-	int a;
-	int b;
-
-	a = 0;
-	while (a <= 98)
+	if ((nb < 0) || (nb > 12))
 	{
-		b = a + 1;
-		while (b <= 99)
-		{
-			ft_print(a / 10 + '0');
-			ft_print(a % 10 + '0');
-			write(1, " ", 1);
-			ft_print(b / 10 + '0');
-			ft_print(b % 10 + '0');
-			if (!(a == 98))
-				write(1, ", ", 2);
-			b++;
-		}
-		a++;
+		return (0);
 	}
+	if (nb == 1) {
+		return (1);
+	}
+	value = nb;
+	return (value * ft_recursive_factorial(nb - 1));
 }

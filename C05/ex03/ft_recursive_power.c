@@ -1,42 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcarvalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/28 19:41:37 by fcarvalh          #+#    #+#             */
-/*   Updated: 2020/11/05 21:23:31 by fcarvalh         ###   ########.fr       */
+/*   Created: 2020/11/05 21:57:34 by fcarvalh          #+#    #+#             */
+/*   Updated: 2020/11/05 22:32:43 by fcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_print(char c)
+int		ft_recursive_power(int nb, int power)
 {
-	write(1, &c, 1);
-}
-
-void	ft_print_comb2(void)
-{
-	int a;
-	int b;
-
-	a = 0;
-	while (a <= 98)
-	{
-		b = a + 1;
-		while (b <= 99)
-		{
-			ft_print(a / 10 + '0');
-			ft_print(a % 10 + '0');
-			write(1, " ", 1);
-			ft_print(b / 10 + '0');
-			ft_print(b % 10 + '0');
-			if (!(a == 98))
-				write(1, ", ", 2);
-			b++;
-		}
-		a++;
-	}
+  int count;
+  if (power < 0)
+    return (0);
+  
+  if (power > 0)
+  {
+    count = nb * ft_recursive_power(nb, power - 1);
+    return (count);
+  }
+  else
+  {
+    return(1);
+  }	
 }

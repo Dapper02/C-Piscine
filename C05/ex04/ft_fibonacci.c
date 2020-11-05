@@ -1,42 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcarvalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/28 19:41:37 by fcarvalh          #+#    #+#             */
-/*   Updated: 2020/11/05 21:23:31 by fcarvalh         ###   ########.fr       */
+/*   Created: 2020/11/05 22:08:00 by fcarvalh          #+#    #+#             */
+/*   Updated: 2020/11/05 22:32:17 by fcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_print(char c)
+int		ft_fibonacci(int index)
 {
-	write(1, &c, 1);
-}
+	int i = 0;
 
-void	ft_print_comb2(void)
-{
-	int a;
-	int b;
-
-	a = 0;
-	while (a <= 98)
+	if(index < 0)
 	{
-		b = a + 1;
-		while (b <= 99)
-		{
-			ft_print(a / 10 + '0');
-			ft_print(a % 10 + '0');
-			write(1, " ", 1);
-			ft_print(b / 10 + '0');
-			ft_print(b % 10 + '0');
-			if (!(a == 98))
-				write(1, ", ", 2);
-			b++;
-		}
-		a++;
+		return (-1);
 	}
+	if(index == 0)
+	{
+		return (0);
+	}
+	if(index == 1)
+	{
+		return (1);
+	}
+	return (ft_fibonacci(index -1) + ft_fibonacci(index -2));
 }
