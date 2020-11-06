@@ -6,13 +6,13 @@
 /*   By: fcarvalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 21:52:54 by fcarvalh          #+#    #+#             */
-/*   Updated: 2020/11/05 22:32:56 by fcarvalh         ###   ########.fr       */
+/*   Updated: 2020/11/06 20:28:22 by fcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int 	ft_iterative_power(int nb, int power)
+int		ft_iterative_power(int nb, int power)
 {
 	int i;
 	int count;

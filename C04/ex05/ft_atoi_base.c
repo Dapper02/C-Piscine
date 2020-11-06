@@ -1,37 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcarvalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/03 23:50:50 by fcarvalh          #+#    #+#             */
-/*   Updated: 2020/11/06 20:11:41 by fcarvalh         ###   ########.fr       */
+/*   Created: 2020/11/06 17:51:09 by fcarvalh          #+#    #+#             */
+/*   Updated: 2020/11/06 17:53:06 by fcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include <stdio.h>
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+int		ft_atoi(char *str)
 {
-	unsigned int i;
-	unsigned int j;
+	int i = 0;
+	int val = 0;
+	int sign = 1;
 
-	i = 0;
-	j = 0;
-	while (dest[i] != '\0' && i < size)
+	while(str[i] == ' ' || str[i] == '\n' || str[i] == '\v' || str[i] == '\r' || str[i] == '\f' || str[i] == '\t')
 	{
 		i++;
 	}
-	while (src[j] != '\0' && (i + j + 1) < size)
+	if(str[i] == '+')
 	{
-		dest[i] = src[j];
 		i++;
-		j++;
 	}
-	if (i < size)
+	else if(str[i] == '-')
 	{
-		dest[i] = '\0';
+		sign = -sign;
+		i++;
 	}
-	return (dest);
+	while(str[i] != '\0')
+	{
+		if (str[i] >= 48 && str[i] <= 57)
+		{
+			val = (val * 10) + (str[i] - '0');
+		}
+		else
+		{
+			break;
+		}
+		i++;
+	}
+	if(sign == -1)
+	{
+		val *= -1;
+	}
+	return (val);
 }

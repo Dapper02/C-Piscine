@@ -6,7 +6,7 @@
 /*   By: fcarvalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 23:27:08 by fcarvalh          #+#    #+#             */
-/*   Updated: 2020/11/04 21:41:31 by fcarvalh         ###   ########.fr       */
+/*   Updated: 2020/11/06 20:06:57 by fcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,21 @@
 
 char	*ft_strcat(char *dest, char *src)
 {
-	int i = 0;
-	int j = 0;
-	
-	while(dest[i] != '\0')
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (dest[i] != '\0')
 	{
 		i++;
 	}
-	
-	while(src[j] != '\0')
+	while (src[j] != '\0')
 	{
 		dest[i] = src[j];
 		i++;
-    	j++;
+		j++;
 	}
-	
 	dest[i] = '\0';
-	
 	return (dest);
 }

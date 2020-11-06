@@ -6,16 +6,17 @@
 /*   By: fcarvalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 23:02:57 by fcarvalh          #+#    #+#             */
-/*   Updated: 2020/11/04 21:35:18 by fcarvalh         ###   ########.fr       */
+/*   Updated: 2020/11/06 20:04:23 by fcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int ft_strncmp(char *s1, char *s2, unsigned int n)
+int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int i = 0;
+	int i;
 
+	i = 0;
 	while (s1[i] != '\0' && s2[i] != '\0' && i < n)
 	{
 		if (s1[i] != s2[i])

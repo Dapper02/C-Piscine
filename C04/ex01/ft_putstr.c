@@ -6,7 +6,7 @@
 /*   By: fcarvalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 22:16:04 by fcarvalh          #+#    #+#             */
-/*   Updated: 2020/11/05 21:09:54 by fcarvalh         ###   ########.fr       */
+/*   Updated: 2020/11/06 20:13:41 by fcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ void	ft_putchar(char c)
 
 void	ft_putstr(char *str)
 {
-	int i = -1;
+	int i;
 
-	while(str[i++] != '\0')
+	i = -1;
+	while (str[i++] != '\0')
 	{
 		ft_putchar(str[i]);
 	}

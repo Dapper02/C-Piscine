@@ -6,17 +6,18 @@
 /*   By: fcarvalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 22:14:24 by fcarvalh          #+#    #+#             */
-/*   Updated: 2020/11/04 22:15:44 by fcarvalh         ###   ########.fr       */
+/*   Updated: 2020/11/06 20:13:52 by fcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_strlen(char *str)
+int		ft_strlen(char *str)
 {
-	int i = 0;
+	int i;
 
-	while(str[i] != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
 		i++;
 	}

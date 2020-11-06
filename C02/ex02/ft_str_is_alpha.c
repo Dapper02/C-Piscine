@@ -6,7 +6,7 @@
 /*   By: fcarvalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 18:16:50 by fcarvalh          #+#    #+#             */
-/*   Updated: 2020/11/03 21:52:05 by fcarvalh         ###   ########.fr       */
+/*   Updated: 2020/11/06 19:58:30 by fcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,12 @@ int		ft_str_is_alpha(char *str)
 	}
 	while (str[c] != '\0')
 	{
-		if ((str[c] >= 'a' && str[c] <= 'z') || (str[c] >= 'A' && str[c] <= 'Z'))
+		if ((str[c] >= 'a' && str[c] <= 'z') ||
+		(str[c] >= 'A' && str[c] <= 'Z'))
 		{
 			return (1);
 			c++;
 		}
 	}
-		return (0);
+	return (0);
 }

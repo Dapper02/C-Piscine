@@ -6,7 +6,7 @@
 /*   By: fcarvalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 21:41:57 by fcarvalh          #+#    #+#             */
-/*   Updated: 2020/11/05 22:33:04 by fcarvalh         ###   ########.fr       */
+/*   Updated: 2020/11/06 20:27:42 by fcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int		ft_recursive_factorial(int nb)
 	{
 		return (0);
 	}
-	if (nb == 1) {
+	if (nb == 1)
+	{
 		return (1);
 	}
 	value = nb;
