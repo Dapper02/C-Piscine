@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcarvalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/03 23:46:17 by fcarvalh          #+#    #+#             */
-/*   Updated: 2020/11/08 19:45:52 by fcarvalh         ###   ########.fr       */
+/*   Created: 2020/11/08 18:28:51 by fcarvalh          #+#    #+#             */
+/*   Updated: 2020/11/08 18:29:15 by fcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+#include <stdlib.h>
+
+int		ft_strlen(char *str)
 {
 	int i;
-	int j;
 
 	i = 0;
-	if (to_find[0] == '\0')
-		return (str);
 	while (str[i] != '\0')
-	{
-		j = 0;
-		while (str[i + j] != '\0' && str[i + j] == to_find[j])
-		{
-			if (to_find[j + 1] == '\0')
-				return (&str[i]);
-			++j;
-		}
 		++i;
+	return (i);
+}
+
+char	*ft_strdup(char *src)
+{
+	int		i;
+	char	*dest;
+
+	i = 0;
+	dest = malloc(ft_strlen(src) * sizeof(*dest + 1))
+	if (dest == '\0')
+		return (0);
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
 	}
-	return (0);
+	dest[i] = '\0';
+	return (dest);
 }
 

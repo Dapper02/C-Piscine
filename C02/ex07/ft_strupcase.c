@@ -10,21 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-
 char	*ft_strupcase(char *str)
 {
-	int c;
+	int i;
 
-	c = 0;
-	while (str[c] != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
-		if (str[c] >= 'a' && str[c] <= 'z')
-		{
-			str[c] -= 32;
-		}
-		c++;
+		if (str[i] < 123 && str[i] > 96)
+			str[i] = str[i] - 32;
+		i++;
 	}
 	return (str);
 }

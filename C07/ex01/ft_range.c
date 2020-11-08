@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcarvalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/03 23:46:17 by fcarvalh          #+#    #+#             */
-/*   Updated: 2020/11/08 19:45:52 by fcarvalh         ###   ########.fr       */
+/*   Created: 2020/11/08 18:29:36 by fcarvalh          #+#    #+#             */
+/*   Updated: 2020/11/08 18:29:50 by fcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+#include <stdlib.h>
+
+int	*ft_range(int min, int max)
 {
 	int i;
-	int j;
+	int range;
+	int *arr;
 
-	i = 0;
-	if (to_find[0] == '\0')
-		return (str);
-	while (str[i] != '\0')
+	i = 1;
+	if (max < min)
+		return (0);
+	range = max - min;
+	arr = malloc(range * sizeof(int));
+	arr[0] = min;
+	while (i < range)
 	{
-		j = 0;
-		while (str[i + j] != '\0' && str[i + j] == to_find[j])
-		{
-			if (to_find[j + 1] == '\0')
-				return (&str[i]);
-			++j;
-		}
-		++i;
+		arr[i] = arr[i - 1] + 1;
+		i++;
 	}
-	return (0);
+	return (arr);
 }
 

@@ -10,22 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int count;
+	unsigned int i;
 
-	count = 0;
-	while (src[count] != '\0' && count < n)
+	i = 0;
+	while (n > i && src[i] != '\0')
 	{
-		dest[count] = src[count];
-		count++;
+		dest[i] = src[i];
+		i++;
 	}
-	while (count < n)
+	while (i < n)
 	{
-		dest[count] = '\0';
-		count++;
+		dest[i] = '\0';
+		i++;
 	}
 	return (dest);
 }

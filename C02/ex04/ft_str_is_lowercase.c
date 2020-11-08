@@ -10,25 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-
-int		ft_str_is_lowercase(char *str)
+int	ft_str_is_lowercase(char *str)
 {
-	int c;
+	int i;
 
-	c = 0;
-	if (str[c] == '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
-		return (1);
+		if (str[i] < 97 || str[i] > 122)
+			return (0);
+		i++;
 	}
-	while (str[c] != '\0')
-	{
-		if (str[c] >= 'a' && str[c] <= 'z')
-		{
-			return (1);
-		}
-		c++;
-	}
-	return (0);
+	return (1);
 }

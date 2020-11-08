@@ -10,21 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-
 char	*ft_strlowcase(char *str)
 {
-	int c;
+	int i;
 
-	c = 0;
-	while (str[c] != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
-		if ((str[c] >= 'A' && str[c] <= 'Z'))
-		{
-			str[c] += 32;
-		}
-		c++;
+		if (str[i] < 91 && str[i] > 64)
+			str[i] = str[i] + 32;
+		i++;
 	}
 	return (str);
 }

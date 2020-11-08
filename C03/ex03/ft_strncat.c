@@ -12,7 +12,7 @@
 
 #include <stdio.h>
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *dest, char *src, unsigned int nb)
 {
 	int i;
 	int j;

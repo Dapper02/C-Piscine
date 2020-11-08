@@ -10,40 +10,36 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-int			ft_putchar(char c);
-
-static void	ft_print_hexa(char np)
+void	ft_putchar(char c)
 {
-	char	*hex;
-
-	hex = "0123456789abcdef";
-	if (np > 16)
-	{
-		ft_print_hexa(np / 10);
-		ft_print_hexa(np % 10);
-	}
-	else
-		ft_putchar(hex[np]);
+	write(1, &c, 1);
 }
 
-void		ft_putstr_non_printable(char *str)
+void	ft_putstr_non_printable(char *str)
 {
-	int		i;
+	int				i;
+	char			*h;
+	unsigned char	p;
+	unsigned char	h1;
+	unsigned char	h2;
 
+	h = "0123456789abcdef";
 	i = 0;
-	while (str[i])
+	while (str[i] != '\0')
 	{
-		if ((str[i] < 32 && str[i] > 0) || str[i] == 127)
+		p = str[i];
+		if (p < 32 || p > 126)
 		{
+			h1 = h[p / 16];
+			h2 = h[p % 16];
 			ft_putchar('\\');
-			if (str[i] < 16)
-				ft_putchar('0');
-			ft_print_hexa(str[i]);
+			ft_putchar(h1);
+			ft_putchar(h2);
 		}
 		else
 			ft_putchar(str[i]);
-		i += 1;
+		i++;
 	}
 }
