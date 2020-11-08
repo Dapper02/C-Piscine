@@ -6,7 +6,7 @@
 /*   By: fcarvalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 17:39:27 by fcarvalh          #+#    #+#             */
-/*   Updated: 2020/11/06 20:26:28 by fcarvalh         ###   ########.fr       */
+/*   Updated: 2020/11/08 21:02:40 by fcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,6 @@ int main(void)
 {
 	char c;
 
-	printf("%c", ft_putnbr_base(2, "abcde"));
+	ft_putnbr_base(2, "abcde");
 	return (0);
 }
